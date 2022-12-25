@@ -39,19 +39,15 @@ public class MainApplicationController implements Initializable {
     @FXML
     private ListView listView;
     @FXML
+    public RadioButton theme1;
+    @FXML
+    public RadioButton theme2;
+    @FXML
     private AnchorPane anchorPane;
-
-
-    private Scene scene;
 
 
     public MainApplicationController() {
     }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-
 
     @FXML
     protected void onStartButtonClick() {
@@ -112,19 +108,22 @@ public class MainApplicationController implements Initializable {
     @FXML
     protected void onClickTheme1() {
         System.out.println("Css1 selected");
+        anchorPane.getStylesheets().clear();
+        anchorPane.getStylesheets().add(getClass().getResource("/css/theme1.css").toExternalForm());
 
     }
 
     @FXML
     protected void onClickTheme2() {
         System.out.println("Css2 selected");
+        anchorPane.getStylesheets().clear();
+        anchorPane.getStylesheets().add(getClass().getResource("/css/theme2.css").toExternalForm());
 
     }
 
     // Метод initialize() контроллера вызывается во время вызова FXMLLoader.load(...)
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //final String cssUrl1 = getClass().getResource("/theme1.css").toExternalForm();
-        //final String cssUrl2 = getClass().getResource("theme2.css").toExternalForm();
+
     }
 }
