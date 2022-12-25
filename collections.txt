@@ -1,0 +1,3 @@
+com.example.lr_7.entities.ArticleCollection Россия 3 4 12 13 14 15 
+com.example.lr_7.entities.StoryCollection Хрестоматия 4 4 55 23 54 10 
+com.example.lr_7.entities.ArticleCollection оаоа 5 4 23 45 22 9 
