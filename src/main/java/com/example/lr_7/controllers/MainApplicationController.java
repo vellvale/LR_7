@@ -124,7 +124,7 @@ public class MainApplicationController implements Initializable {
     // Метод initialize() контроллера вызывается во время вызова FXMLLoader.load(...)
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        final String cssUrl1 = getClass().getResource("/theme1.css").toExternalForm();
+        //final String cssUrl1 = getClass().getResource("/theme1.css").toExternalForm();
         //final String cssUrl2 = getClass().getResource("theme2.css").toExternalForm();
     }
 }
