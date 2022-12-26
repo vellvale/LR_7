@@ -6,14 +6,17 @@ import com.example.lr_7.utils.common.PaperCollectionOperations;
 import com.example.lr_7.utils.io.ByteOperations;
 import com.example.lr_7.utils.io.Serialize;
 import com.example.lr_7.utils.io.SymbolOperations;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -99,14 +102,11 @@ public class MainApplicationController implements Initializable {
 
     @FXML
     protected void handle() {
-        //System.out.println("clicked on " + listView.getSelectionModel().getSelectedItem());
-
         Pane p = new Pane();
-            Label label = new Label("Описание объекта базы № " + listView.getSelectionModel().getSelectedIndex() + "\n" + listView.getSelectionModel().getSelectedItem().toString());
-            scrollBox.setPrefHeight(scrollBox.getPrefHeight() + 60);
-            scrollBox.getChildren().add(p);
-            p.getChildren().add(label);
-
+        Label label = new Label("Описание объекта базы № " + listView.getSelectionModel().getSelectedIndex() + "\n" + listView.getSelectionModel().getSelectedItem().toString());
+        scrollBox.setPrefHeight(scrollBox.getPrefHeight() + 60);
+        scrollBox.getChildren().add(p);
+        p.getChildren().add(label);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Описание объекта массива");
@@ -120,7 +120,6 @@ public class MainApplicationController implements Initializable {
         System.out.println("Css1 selected");
         anchorPane.getStylesheets().clear();
         anchorPane.getStylesheets().add(getClass().getResource("/css/theme1.css").toExternalForm());
-
     }
 
     @FXML
@@ -128,7 +127,6 @@ public class MainApplicationController implements Initializable {
         System.out.println("Css2 selected");
         anchorPane.getStylesheets().clear();
         anchorPane.getStylesheets().add(getClass().getResource("/css/theme2.css").toExternalForm());
-
     }
 
     // Метод initialize() контроллера вызывается во время вызова FXMLLoader.load(...)
