@@ -6,15 +6,14 @@ import com.example.lr_7.utils.common.PaperCollectionOperations;
 import com.example.lr_7.utils.io.ByteOperations;
 import com.example.lr_7.utils.io.Serialize;
 import com.example.lr_7.utils.io.SymbolOperations;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,6 +44,10 @@ public class MainApplicationController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
 
+    @FXML
+    private ScrollPane scrollPane;
+
+    VBox box = new VBox();
 
     public MainApplicationController() {
     }
@@ -85,6 +88,7 @@ public class MainApplicationController implements Initializable {
             paperCollectionList.add(PaperCollectionOperations.createStory("Список лучших рассказов 1913 года", 2, new int[]{32, 65, 34, 12, 57, 66}));
             paperCollectionList.add(PaperCollectionOperations.createArticle("Книга больших новостных фотографий", 2, new int[]{3, 6, 8, 4}));
             paperCollectionList.add(PaperCollectionOperations.createStory("Сказки для малышей", 2, new int[]{21, 16, 6, 9}));
+
             ObservableList<PaperCollection> items = FXCollections.observableArrayList(paperCollectionList);
             listView.setItems(items);
         }
@@ -98,6 +102,9 @@ public class MainApplicationController implements Initializable {
     @FXML
     protected void handle() {
         System.out.println("clicked on " + listView.getSelectionModel().getSelectedItem());
+
+
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Описание объекта массива");
         alert.setHeaderText(null);

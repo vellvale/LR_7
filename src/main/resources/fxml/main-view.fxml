@@ -3,99 +3,93 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<AnchorPane fx:id="anchorPane" prefHeight="378.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lr_7.controllers.MainApplicationController">
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="378.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lr_7.controllers.MainApplicationController">
     <children>
-        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-              minWidth="-Infinity" prefHeight="378.0" prefWidth="326.0" spacing="20.0">
+        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="326.0" spacing="20.0">
             <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="170.0" prefWidth="286.0">
                 <children>
                     <Label text="Вывести массив объектов:">
                         <font>
-                            <Font size="14.0"/>
+                            <Font size="14.0" />
                         </font>
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </Label>
                     <RadioButton fx:id="load1" mnemonicParsing="false" text="загрузка из файла collections.bin">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </RadioButton>
                     <RadioButton fx:id="load2" mnemonicParsing="false" text="загрузка из файла collections.txt">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </RadioButton>
                     <RadioButton fx:id="load3" mnemonicParsing="false" text="загрузка из файла serialized.bin">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </RadioButton>
                     <RadioButton fx:id="load4" mnemonicParsing="false" text="автоматическое заполнение">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </RadioButton>
                     <HBox prefHeight="100.0" prefWidth="200.0">
                         <children>
                             <Button onAction="#onStartButtonClick" text="Начать" textAlignment="CENTER">
                                 <font>
-                                    <Font size="14.0"/>
+                                    <Font size="14.0" />
                                 </font>
                             </Button>
-                            <Button mnemonicParsing="false" onAction="#onClearButtonClick" prefHeight="30.0"
-                                    prefWidth="86.0" text="Очистить">
+                            <Button mnemonicParsing="false" onAction="#onClearButtonClick" prefHeight="30.0" prefWidth="86.0" text="Очистить">
                                 <HBox.margin>
-                                    <Insets left="120.0"/>
+                                    <Insets left="120.0" />
                                 </HBox.margin>
                                 <font>
-                                    <Font size="14.0"/>
+                                    <Font size="14.0" />
                                 </font>
                             </Button>
                         </children>
                     </HBox>
                 </children>
                 <VBox.margin>
-                    <Insets left="10.0"/>
+                    <Insets left="10.0" />
                 </VBox.margin>
             </VBox>
             <VBox prefHeight="59.0" prefWidth="174.0">
                 <children>
                     <Label text="Выбрать тему:">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </Label>
                     <RadioButton fx:id="theme1" mnemonicParsing="false" onAction="#onClickTheme1" text="Theme 1">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </RadioButton>
                     <RadioButton fx:id="theme2" mnemonicParsing="false" onAction="#onClickTheme2" text="Theme 2">
                         <VBox.margin>
-                            <Insets bottom="10.0"/>
+                            <Insets bottom="10.0" />
                         </VBox.margin>
                     </RadioButton>
                 </children>
                 <VBox.margin>
-                    <Insets left="10.0"/>
+                    <Insets left="10.0" />
                 </VBox.margin>
             </VBox>
             <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
         </VBox>
-        <ScrollPane layoutX="348.0" layoutY="47.0" prefHeight="297.0" prefWidth="299.0">
-            <content>
-                <StackPane prefHeight="310.0" prefWidth="413.0">
-                    <children>
-                        <ListView fx:id="listView" onMouseClicked="#handle" prefHeight="200.0" prefWidth="200.0"/>
-                    </children>
-                </StackPane>
-            </content>
+        <ScrollPane fx:id="scrollPane" layoutX="348.0" layoutY="47.0" prefHeight="297.0" prefWidth="299.0">
+         <content>
+                  <ListView fx:id="listView" onMouseClicked="#handle" prefHeight="295.0" prefWidth="298.0" />
+         </content>
         </ScrollPane>
     </children>
 </AnchorPane>
