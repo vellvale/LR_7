@@ -45,9 +45,7 @@ public class MainApplicationController implements Initializable {
     private AnchorPane anchorPane;
 
     @FXML
-    private ScrollPane scrollPane;
-
-    VBox box = new VBox();
+    private VBox scrollBox;
 
     public MainApplicationController() {
     }
@@ -101,8 +99,13 @@ public class MainApplicationController implements Initializable {
 
     @FXML
     protected void handle() {
-        System.out.println("clicked on " + listView.getSelectionModel().getSelectedItem());
+        //System.out.println("clicked on " + listView.getSelectionModel().getSelectedItem());
 
+        Pane p = new Pane();
+            Label label = new Label("Описание объекта базы № " + listView.getSelectionModel().getSelectedIndex() + "\n" + listView.getSelectionModel().getSelectedItem().toString());
+            scrollBox.setPrefHeight(scrollBox.getPrefHeight() + 60);
+            scrollBox.getChildren().add(p);
+            p.getChildren().add(label);
 
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

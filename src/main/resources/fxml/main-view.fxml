@@ -86,10 +86,13 @@
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
         </VBox>
-        <ScrollPane fx:id="scrollPane" layoutX="348.0" layoutY="47.0" prefHeight="297.0" prefWidth="299.0">
+      <ScrollPane layoutX="326.0" layoutY="24.0" prefHeight="335.0" prefWidth="326.0">
          <content>
-                  <ListView fx:id="listView" onMouseClicked="#handle" prefHeight="295.0" prefWidth="298.0" />
+            <VBox fx:id="scrollBox" prefHeight="506.0" prefWidth="324.0">
+               <children>
+                        <ListView fx:id="listView" onMouseClicked="#handle" prefHeight="324.0" prefWidth="324.0" />
+               </children></VBox>
          </content>
-        </ScrollPane>
+      </ScrollPane>
     </children>
 </AnchorPane>
